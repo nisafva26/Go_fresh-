@@ -3,310 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GO FRESH — The Future of Fresh · Dubai</title>
-  <meta name="description" content="GO FRESH is a trusted egg trading company in the UAE. HACCP-certified Kanza and Miya eggs, delivered daily to 100+ shops across Dubai." />
-  <meta name="theme-color" content="#04050A" />
-  <meta property="og:title" content="GO FRESH — Fresh. Trusted. Everywhere in Dubai." />
+  <title>Go Fresh — Fresh. Trusted. Everywhere in Dubai.</title>
+  <meta name="description" content="Go Fresh is a trusted egg trading company in the UAE. HACCP-certified Kanza and Miya eggs, delivered daily to 100+ shops across Dubai." />
+  <meta name="theme-color" content="#F5EDE0" />
+  <meta property="og:title" content="Go Fresh — Fresh. Trusted. Everywhere in Dubai." />
   <meta property="og:description" content="HACCP-certified Kanza and Miya eggs, delivered daily to 100+ shops across Dubai." />
-  <meta property="og:image" content="/images/hero.webp" />
+  <meta property="og:image" content="/images/nest.webp" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Noto+Kufi+Arabic:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Mr+Dafoe&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
-  <script type="importmap">{ "imports": { "three": "/js/vendor/three.module.js" } }</script>
 </head>
-<body class="is-loading">
+<body>
 
-  <!-- ============ BOOT SEQUENCE ============ -->
-  <div class="boot" aria-hidden="true">
-    <div class="boot__inner">
-      <div class="boot__log"></div>
-      <div class="boot__bar"><span></span></div>
-      <div class="boot__meta"><span>GO_FRESH://SYSTEM</span><span class="boot__pct">000%</span></div>
-    </div>
-  </div>
-
-  <!-- WebGL stage (fixed, behind everything) -->
-  <canvas class="gl" aria-hidden="true"></canvas>
-  <div class="gl-fallback" aria-hidden="true"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
-
-  <!-- Cursor -->
-  <div class="cursor" aria-hidden="true"><i></i><span class="cursor__label"></span></div>
-
-  <!-- ============ HUD FRAME ============ -->
-  <div class="hud" aria-hidden="true">
-    <span class="hud__c hud__c--tl"></span><span class="hud__c hud__c--tr"></span>
-    <span class="hud__c hud__c--bl"></span><span class="hud__c hud__c--br"></span>
-    <div class="hud__left mono">25.2048°N / 55.2708°E</div>
-    <div class="hud__right mono"><span class="hud__scroll">000</span> / 100</div>
-  </div>
-
-  <!-- ============ NAV ============ -->
+  <!-- ===== Header ===== -->
   <header class="nav">
-    <a href="#top" class="nav__logo" data-cursor="HOME">
-      <svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 2C30 2 38 22 38 33 38 44 30 50 20 50 10 50 2 44 2 33 2 22 10 2 20 2Z"/></svg>
-      <span>GO<b>FRESH</b></span>
+    <a href="#top" class="nav__logo" aria-label="Go Fresh — home">
+      <span class="nav__word">Go Fresh</span>
+      <span class="nav__est">Dubai · UAE</span>
     </a>
-    <nav class="nav__links mono" aria-label="Primary">
-      <a href="#telemetry"><i>01</i>System</a>
-      <a href="#network"><i>02</i>Network</a>
-      <a href="#inventory"><i>03</i>Inventory</a>
-      <a href="#contact"><i>04</i>Contact</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#story">Our story</a>
+      <a href="#brands">Brands</a>
+      <a href="#eggs">Our eggs</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <div class="nav__status mono"><span class="led"></span><span class="js-status">DUBAI —:—</span></div>
+    <a class="nav__cta" href="https://wa.me/971506261523?text=Hi%20Go%20Fresh%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order now</a>
     <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </header>
 
   <div class="menu" aria-hidden="true">
-    <nav class="menu__links">
-      <a href="#telemetry"><i class="mono">01</i>System</a>
-      <a href="#network"><i class="mono">02</i>Network</a>
-      <a href="#inventory"><i class="mono">03</i>Inventory</a>
-      <a href="#contact"><i class="mono">04</i>Contact</a>
+    <nav>
+      <a href="#story">Our story</a>
+      <a href="#brands">Brands</a>
+      <a href="#eggs">Our eggs</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <div class="menu__foot mono">
-      <a href="tel:+971506261523">+971 50 626 1523</a>
-      <a href="mailto:gofreshfst@gmail.com">gofreshfst@gmail.com</a>
-    </div>
+    <p class="menu__foot"><a href="tel:+971506261523">+971 50 626 1523</a><br /><a href="mailto:gofreshfst@gmail.com">gofreshfst@gmail.com</a></p>
   </div>
 
   <main id="top">
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" data-stage="hero">
-      <div class="hero__meta mono">
-        <span><span class="led"></span> SYSTEM ONLINE</span>
-        <span>EGG TRADING // DUBAI, UAE</span>
-        <span class="ar">طازج كل يوم</span>
-      </div>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <p class="label hero__label reveal-up">Egg traders · Dubai, United Arab Emirates</p>
 
-      <h1 class="hero__title">
-        <span class="hero__row"><span class="scramble" data-text="FRESH.">FRESH.</span></span>
-        <span class="hero__row hero__row--outline"><span class="scramble" data-text="TRUSTED.">TRUSTED.</span></span>
-        <span class="hero__row hero__row--grad"><span class="scramble" data-text="EVERYWHERE">EVERYWHERE</span></span>
-        <span class="hero__row hero__row--small"><span class="scramble" data-text="IN DUBAI_">IN DUBAI_</span></span>
+      <h1 class="hero__title" aria-label="Fresh. Trusted. Everywhere in Dubai.">
+        <span class="hero__line"><span>Fresh.</span></span>
+        <span class="hero__line"><span>Trusted.</span></span>
       </h1>
 
-      <div class="hero__side">
-        <p>Supplying eggs to <b>100+ shops</b> with unmatched quality. HACCP certified. Delivered daily.</p>
-        <div class="hero__ctas">
-          <a href="#inventory" class="btn btn--grad" data-cursor="ENTER"><span>Explore products</span><i>→</i></a>
-          <a href="https://wa.me/971506261523?text=Hi%20GO%20FRESH%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" class="btn btn--line" data-cursor="CHAT"><span>Order on WhatsApp</span></a>
+      <div class="hero__arch">
+        <div class="arch"><img src="/images/nest.webp" alt="Four brown eggs resting in a nest of twigs and leaves" fetchpriority="high" /></div>
+        <p class="script hero__script" aria-hidden="true">everywhere in Dubai</p>
+        <span class="hero__caption label" aria-hidden="true">Go Fresh</span>
+      </div>
+
+      <div class="hero__foot">
+        <p class="hero__lede reveal-up">Supplying farm‑fresh eggs to <em>100+ shops</em> across the Emirates — HACCP certified and delivered daily.</p>
+        <div class="hero__ctas reveal-up">
+          <a href="#eggs" class="btn btn--ink">Explore our eggs</a>
+          <a href="https://wa.me/971506261523?text=Hi%20Go%20Fresh%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" class="btn btn--line">Order on WhatsApp</a>
         </div>
       </div>
-
-      <div class="hero__readout mono" aria-hidden="true">
-        <div><small>OBJ</small>EGG.UNIT_001</div>
-        <div><small>TEMP</small><span class="js-temp">4.0</span>°C</div>
-        <div><small>FRESH.IDX</small><span class="js-idx">99.8</span>%</div>
-        <div><small>ROT</small><span class="js-rot">000</span>°</div>
-      </div>
-
-      <div class="hero__scroll mono"><span>SCROLL</span><i></i></div>
     </section>
 
-    <!-- ============ TICKER ============ -->
-    <div class="ticker mono" aria-hidden="true">
-      <div class="ticker__track">
-        <span>● HACCP CERTIFIED</span><span>● 100+ RETAIL NODES</span><span>● DAILY DISPATCH</span><span>● ARABIAN FARMS</span><span>● AL AIN</span><span>● AL JAZEERA</span><span>● KN</span><span>● KANZA</span><span>● MIYA</span>
-        <span>● HACCP CERTIFIED</span><span>● 100+ RETAIL NODES</span><span>● DAILY DISPATCH</span><span>● ARABIAN FARMS</span><span>● AL AIN</span><span>● AL JAZEERA</span><span>● KN</span><span>● KANZA</span><span>● MIYA</span>
+    <!-- ===== Statement ===== -->
+    <section class="statement" id="story">
+      <p class="label">Our story</p>
+      <p class="statement__text">
+        Go Fresh is a trusted egg trading company in the UAE
+        <span class="pill"><img src="/images/farm.webp" alt="" /></span>
+        delivering farm‑fresh eggs across the Emirates. Hygiene, quality
+        <span class="pill pill--round"><img src="/images/fried-egg.webp" alt="" /></span>
+        and timely delivery have built lasting partnerships with over
+        <span class="hl">100 retailers</span> and wholesalers.
+      </p>
+    </section>
+
+    <!-- ===== Farms marquee ===== -->
+    <div class="marquee" aria-label="Our partner farms: Arabian Farms, Al Ain, Al Jazeera, KN">
+      <div class="marquee__track" aria-hidden="true">
+        <span>Arabian Farms</span><i>✻</i><span>Al Ain</span><i>✻</i><span>Al Jazeera</span><i>✻</i><span>KN</span><i>✻</i>
+        <span>Arabian Farms</span><i>✻</i><span>Al Ain</span><i>✻</i><span>Al Jazeera</span><i>✻</i><span>KN</span><i>✻</i>
       </div>
     </div>
 
-    <!-- ============ TELEMETRY / STORY ============ -->
-    <section class="telemetry" id="telemetry" data-stage="telemetry">
-      <div class="wrap">
-        <p class="tag mono">[01] — SYSTEM OVERVIEW</p>
-        <p class="manifesto">
-          <span class="fill-text">Go Fresh is a trusted egg trading company in the UAE, delivering farm‑fresh eggs across the Emirates. Hygiene, quality and timely delivery are our operating system — trusted by over 100 retailers and wholesalers.</span>
-        </p>
+    <!-- ===== Journey posters ===== -->
+    <section class="journey">
+      <header class="sec-head">
+        <p class="label">From farm to shelf</p>
+        <h2 class="h2">Handled with <span class="script">care</span></h2>
+      </header>
 
-        <div class="panels">
-          <div class="panel" data-cursor="DATA">
-            <div class="panel__head mono"><span>NODE.COUNT</span><span>01</span></div>
-            <div class="panel__ringwrap"><svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="ring__bg"/><circle cx="60" cy="60" r="52" class="ring__fg" pathLength="1"/></svg><div class="panel__num"><span class="count" data-to="100">0</span><small>+</small></div></div>
-            <p>Retail &amp; wholesale partners</p>
+      <div class="posters">
+        <article class="poster poster--photo">
+          <img src="/images/farm.webp" alt="Hens roaming beside a tray of fresh eggs on a farm" loading="lazy" />
+          <span class="poster__no label">01</span>
+          <div class="poster__type">
+            <h3>Sourced</h3>
+            <p class="label">Arabian Farms · Al Ain · Al Jazeera · KN</p>
           </div>
-          <div class="panel" data-cursor="DATA">
-            <div class="panel__head mono"><span>DISPATCH.FREQ</span><span>02</span></div>
-            <div class="panel__ringwrap"><svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="ring__bg"/><circle cx="60" cy="60" r="52" class="ring__fg" pathLength="1"/></svg><div class="panel__num panel__num--word">DAILY</div></div>
-            <p>Deliveries across Dubai &amp; UAE</p>
+        </article>
+
+        <article class="poster poster--tile">
+          <span class="poster__no label">02</span>
+          <div class="seal" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs><path id="sealPath" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs>
+              <circle cx="100" cy="100" r="96" fill="#F5EDE0"/>
+              <circle cx="100" cy="100" r="88" fill="none" stroke="#1F6E78" stroke-width="1"/>
+              <text><textPath href="#sealPath">HACCP CERTIFIED · FOOD SAFETY · QUALITY CHECKED ·</textPath></text>
+              <text x="100" y="96" text-anchor="middle" class="seal__big">HACCP</text>
+              <text x="100" y="124" text-anchor="middle" class="seal__small">CERTIFIED</text>
+            </svg>
           </div>
-          <div class="panel" data-cursor="DATA">
-            <div class="panel__head mono"><span>SOURCE.FARMS</span><span>03</span></div>
-            <div class="panel__ringwrap"><svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="ring__bg"/><circle cx="60" cy="60" r="52" class="ring__fg" pathLength="1"/></svg><div class="panel__num"><span class="count" data-to="4" data-pad="2">00</span></div></div>
-            <p>Reputable UAE partner farms</p>
+          <div class="poster__type">
+            <h3>Certified</h3>
+            <p class="label">Rigorous checks at every stage</p>
           </div>
-          <div class="panel" data-cursor="DATA">
-            <div class="panel__head mono"><span>SAFETY.CERT</span><span>04</span></div>
-            <div class="panel__ringwrap"><svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="ring__bg"/><circle cx="60" cy="60" r="52" class="ring__fg" pathLength="1"/></svg><div class="panel__num panel__num--word">HACCP</div></div>
-            <p>Certified food safety</p>
+        </article>
+
+        <article class="poster poster--photo">
+          <img src="/images/fried-egg.webp" alt="A sunny-side-up egg with a bright orange yolk in a dark pan" loading="lazy" />
+          <span class="poster__no label">03</span>
+          <div class="poster__type">
+            <h3>Delivered</h3>
+            <p class="label">Daily · across Dubai &amp; the UAE</p>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- ============ NETWORK (pinned) ============ -->
-    <section class="network" id="network" data-stage="network">
-      <div class="network__pin">
-        <div class="network__copy">
-          <p class="tag mono">[02] — SUPPLY NETWORK</p>
-          <h2 class="h2">Farm → hub → <span class="grad">100+ shops.</span></h2>
-          <ol class="steps">
-            <li class="step is-active"><span class="mono">01</span><div><h3>Source</h3><p>Eggs from the UAE's most reputable farms — Arabian Farms, Al Ain, Al Jazeera and KN.</p></div></li>
-            <li class="step"><span class="mono">02</span><div><h3>Verify</h3><p>HACCP certified. Rigorous quality checks at every stage.</p></div></li>
-            <li class="step"><span class="mono">03</span><div><h3>Pack</h3><p>Graded and sealed under Kanza and Miya — trays of 30, 15 and 6.</p></div></li>
-            <li class="step"><span class="mono">04</span><div><h3>Dispatch</h3><p>Daily deliveries across Dubai and the UAE.</p></div></li>
-            <li class="step"><span class="mono">05</span><div><h3>Deliver</h3><p>On the shelves of 100+ retailers — and on your table.</p></div></li>
-          </ol>
+    <!-- ===== Brands ===== -->
+    <section class="brands" id="brands">
+      <article class="brand brand--kanza">
+        <div class="brand__copy">
+          <p class="label">Premium freshness</p>
+          <h2 class="brand__name">Kanza</h2>
+          <p class="brand__caps label">Kanza</p>
+          <p class="brand__text">For quality seekers. Large, Grade AA eggs in white and brown — and the Super 6: extra large and rich in Omega‑3.</p>
+          <a href="#eggs" class="link" data-filter-link="kanza">See the Kanza range</a>
         </div>
+        <div class="brand__pack"><img src="/images/kanza-super-6.webp" alt="Kanza Super 6 eggs pack" loading="lazy" /></div>
+      </article>
 
-        <div class="network__viz">
-          <svg class="net" viewBox="0 0 800 600" aria-label="Diagram: four farms feed the GO FRESH hub, which supplies over 100 shops">
-            <defs>
-              <linearGradient id="gLine" x1="0" x2="1"><stop offset="0" stop-color="#C8FF3D"/><stop offset="1" stop-color="#FFB21A"/></linearGradient>
-              <radialGradient id="gHub"><stop offset="0" stop-color="#FFB21A" stop-opacity=".55"/><stop offset="1" stop-color="#FFB21A" stop-opacity="0"/></radialGradient>
-              <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <g class="net__farmlines"></g>
-            <g class="net__shoplines"></g>
-            <g class="net__farms"></g>
-            <g class="net__pulses"></g>
-            <g class="net__hub">
-              <circle cx="400" cy="300" r="110" fill="url(#gHub)" class="net__hubglow"/>
-              <circle cx="400" cy="300" r="62" class="net__hubring" fill="none" stroke="url(#gLine)" stroke-width="1.5" stroke-dasharray="4 6"/>
-              <circle cx="400" cy="300" r="44" fill="#0A0D16" stroke="#C8FF3D" stroke-width="2"/>
-              <path d="M400 276c11 0 19 17 19 27 0 11-8 18-19 18s-19-7-19-18c0-10 8-27 19-27Z" fill="#FFB21A"/>
-              <text x="400" y="380" text-anchor="middle" class="net__label net__label--hub">GO FRESH HUB</text>
-              <g class="net__check" opacity="0">
-                <circle cx="438" cy="262" r="14" fill="#C8FF3D"/>
-                <path d="m431 262 5 5 9-10" fill="none" stroke="#04050A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </g>
-            </g>
-            <g class="net__shops"></g>
-            <text x="676" y="560" text-anchor="middle" class="net__label"><tspan class="net__count">000</tspan> SHOPS ONLINE</text>
-          </svg>
+      <article class="brand brand--miya">
+        <div class="brand__copy">
+          <p class="label">Everyday value</p>
+          <h2 class="brand__name">Miya</h2>
+          <p class="brand__caps label">Miya</p>
+          <p class="brand__text">Excellent value without compromising quality. Fresh daily, budget friendly — trusted by households across the UAE.</p>
+          <a href="#eggs" class="link" data-filter-link="miya">See the Miya range</a>
         </div>
-        <div class="network__bar"><span></span></div>
-      </div>
+        <div class="brand__pack"><img src="/images/miya-30-white.webp" alt="Miya 30 white eggs tray" loading="lazy" /></div>
+      </article>
     </section>
 
-    <!-- ============ BRANDS ============ -->
-    <section class="brands" data-stage="brands">
-      <div class="wrap">
-        <p class="tag mono">[03] — BRAND UNITS</p>
-        <h2 class="h2">Two brands. <span class="outline">One standard.</span></h2>
-        <div class="units">
-          <article class="unit unit--kanza holo" data-cursor="KANZA">
-            <div class="unit__head mono"><span>UNIT // KZ</span><span>CLASS: PREMIUM</span></div>
-            <div class="capsule"><img src="/images/kanza-super-6.webp" alt="Kanza Super 6 eggs pack" loading="lazy" /><span class="capsule__scan"></span></div>
-            <h3>Kanza</h3>
-            <p>Premium freshness for quality seekers. Large, Grade AA — plus the Super 6: extra large and rich in Omega‑3.</p>
-            <dl class="spec mono"><div><dt>FORMATS</dt><dd>30 · 15 · 6 · SUPER 6</dd></div><div><dt>SHELL</dt><dd>WHITE · BROWN</dd></div><div><dt>GRADE</dt><dd>AA</dd></div></dl>
-            <button class="unit__link mono" data-filter-link="kanza">VIEW KANZA RANGE →</button>
-          </article>
-          <article class="unit unit--miya holo" data-cursor="MIYA">
-            <div class="unit__head mono"><span>UNIT // MY</span><span>CLASS: VALUE</span></div>
-            <div class="capsule"><img src="/images/miya-30-white.webp" alt="Miya 30 white eggs tray" loading="lazy" /><span class="capsule__scan"></span></div>
-            <h3>Miya</h3>
-            <p>Excellent value without compromising quality. Fresh daily, budget friendly, trusted by households across the UAE.</p>
-            <dl class="spec mono"><div><dt>FORMATS</dt><dd>30 · 15 · 6</dd></div><div><dt>SHELL</dt><dd>WHITE</dd></div><div><dt>MODE</dt><dd>FRESH DAILY</dd></div></dl>
-            <button class="unit__link mono" data-filter-link="miya">VIEW MIYA RANGE →</button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ INVENTORY ============ -->
-    <section class="inventory" id="inventory" data-stage="inventory">
-      <div class="wrap">
-        <div class="inventory__head">
-          <div>
-            <p class="tag mono">[04] — INVENTORY</p>
-            <h2 class="h2">Quality eggs for <span class="grad">every need.</span></h2>
-          </div>
-          <div class="seg mono" role="tablist" aria-label="Filter products">
-            <span class="seg__pill" aria-hidden="true"></span>
-            <button class="is-active" data-filter="all" role="tab" aria-selected="true">ALL·10</button>
-            <button data-filter="kanza" role="tab" aria-selected="false">KANZA·7</button>
-            <button data-filter="miya" role="tab" aria-selected="false">MIYA·3</button>
-            <button data-filter="brown" role="tab" aria-selected="false">BROWN·3</button>
-          </div>
-        </div>
-        <div class="grid"></div>
-        <noscript><p>Our range: Kanza 30, 15 and 6 (white &amp; brown), Kanza Super 6, and Miya 30, 15 and 6 white eggs. Call +971 50 626 1523 to order.</p></noscript>
-      </div>
-    </section>
-
-    <!-- ============ PROTOCOL ============ -->
-    <section class="protocol" data-stage="protocol">
-      <div class="mega" aria-hidden="true">
-        <div class="mega__row"><span>HACCP CERTIFIED ✦ FARM FRESH ✦ DELIVERED DAILY ✦&nbsp;</span><span>HACCP CERTIFIED ✦ FARM FRESH ✦ DELIVERED DAILY ✦&nbsp;</span></div>
-      </div>
-      <div class="wrap">
-        <p class="tag mono">[05] — QUALITY PROTOCOL</p>
-        <div class="protocols">
-          <div class="proto holo"><span class="mono">PROTOCOL_01</span><h3>Quality assurance</h3><p>Rigorous quality checks at every stage of production.</p></div>
-          <div class="proto holo"><span class="mono">PROTOCOL_02</span><h3>Reliable delivery</h3><p>Timely deliveries across Dubai and the UAE.</p></div>
-          <div class="proto holo"><span class="mono">PROTOCOL_03</span><h3>Farm fresh</h3><p>Direct from the UAE's best farms to your table.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact" data-stage="contact">
-      <div class="wrap contact__grid">
+    <!-- ===== Products ===== -->
+    <section class="eggs" id="eggs">
+      <header class="eggs__head">
         <div>
-          <p class="tag mono">[06] — OPEN A CHANNEL</p>
-          <h2 class="h2">Let's talk <span class="grad">fresh.</span></h2>
-          <p class="lead">Supermarket, café or corner shop — connect with us and we'll get eggs on your shelves.</p>
-          <div class="open-state mono"><span class="led"></span><span class="js-open">Checking hours…</span></div>
-          <ul class="channels">
-            <li><a href="tel:+971506261523" data-cursor="CALL"><small class="mono">VOICE</small>+971 50 626 1523<i>↗</i></a></li>
-            <li><a href="mailto:gofreshfst@gmail.com" data-cursor="MAIL"><small class="mono">MAIL</small>gofreshfst@gmail.com<i>↗</i></a></li>
-            <li><a href="https://wa.me/971506261523" target="_blank" rel="noopener" data-cursor="CHAT"><small class="mono">WHATSAPP</small>Chat with us<i>↗</i></a></li>
-            <li><a href="https://www.instagram.com/gofresh_foodstuff" target="_blank" rel="noopener" data-cursor="FOLLOW"><small class="mono">INSTAGRAM</small>@gofresh_foodstuff<i>↗</i></a></li>
-          </ul>
-          <p class="mono small-dim">MON–SAT · 08:00–18:00 GST · DUBAI, UNITED ARAB EMIRATES</p>
+          <p class="label">Our eggs</p>
+          <h2 class="h2">For every <span class="script">table</span></h2>
         </div>
+        <div class="tabs" role="tablist" aria-label="Filter products">
+          <button class="is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button data-filter="kanza" role="tab" aria-selected="false">Kanza</button>
+          <button data-filter="miya" role="tab" aria-selected="false">Miya</button>
+          <button data-filter="brown" role="tab" aria-selected="false">Brown</button>
+        </div>
+      </header>
+      <div class="shelf"></div>
+      <noscript><p>Kanza 30, 15 and 6 (white &amp; brown), Kanza Super 6, and Miya 30, 15 and 6 white. Call +971 50 626 1523 to order.</p></noscript>
+    </section>
 
-        <form class="terminal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <div class="terminal__bar mono"><i></i><i></i><i></i><span>gofresh@dubai: ~/contact</span></div>
-          <div class="terminal__body">
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
-            <p class="mono terminal__line"><span class="prompt">$</span> open --channel=message<span class="caret"></span></p>
-            <label class="tfield"><span class="mono">&gt; name</span><input name="name" type="text" required autocomplete="name" placeholder="Your name" /></label>
-            <label class="tfield"><span class="mono">&gt; email</span><input name="email" type="email" required autocomplete="email" placeholder="you@company.com" /></label>
-            <label class="tfield"><span class="mono">&gt; phone</span><input name="phone" type="tel" autocomplete="tel" placeholder="+971 …" /></label>
-            <label class="tfield"><span class="mono">&gt; message</span><textarea name="message" rows="4" required placeholder="How can we help?"></textarea></label>
-            <div class="terminal__actions">
-              <button type="submit" class="btn btn--grad" data-cursor="SEND"><span>Transmit</span><i>→</i></button>
-              <button type="button" class="btn btn--line js-wa" data-cursor="CHAT"><span>Send via WhatsApp</span></button>
-            </div>
-            <p class="mono terminal__status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
+    <!-- ===== Numbers ===== -->
+    <section class="numbers">
+      <div class="numbers__grid">
+        <div class="num"><p class="num__v"><span class="count" data-to="100">100</span>+</p><p class="label">Retail partners</p></div>
+        <div class="num"><p class="num__v">Daily</p><p class="label">Deliveries</p></div>
+        <div class="num"><p class="num__v"><span class="count" data-to="4">4</span></p><p class="label">Partner farms</p></div>
+        <div class="num"><p class="num__v">HACCP</p><p class="label">Certified safety</p></div>
       </div>
+      <p class="numbers__script script" aria-hidden="true">quality, every single egg</p>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="contact" id="contact">
+      <div class="contact__intro">
+        <p class="label">Get in touch</p>
+        <h2 class="contact__title">Say <span class="script">hello</span></h2>
+        <p class="contact__lede">Supermarket, café or corner shop — let's get fresh eggs on your shelves.</p>
+        <dl class="details">
+          <div><dt class="label">Call</dt><dd><a href="tel:+971506261523">+971 50 626 1523</a></dd></div>
+          <div><dt class="label">Email</dt><dd><a href="mailto:gofreshfst@gmail.com">gofreshfst@gmail.com</a></dd></div>
+          <div><dt class="label">Hours</dt><dd>Mon – Sat, 8 am – 6 pm</dd></div>
+          <div><dt class="label">Where</dt><dd>Dubai, United Arab Emirates</dd></div>
+        </dl>
+      </div>
+
+      <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <label class="field"><span>Your name</span><input name="name" type="text" required autocomplete="name" /></label>
+        <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email" /></label>
+        <label class="field"><span>Phone <em>(optional)</em></span><input name="phone" type="tel" autocomplete="tel" /></label>
+        <label class="field"><span>Message</span><textarea name="message" rows="4" required></textarea></label>
+        <div class="form__actions">
+          <button type="submit" class="btn btn--ink">Send message</button>
+          <button type="button" class="btn btn--line js-wa">Send via WhatsApp</button>
+        </div>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer" data-stage="footer">
-    <div class="wrap">
-      <div class="footer__mega" aria-hidden="true">GO<span>FRESH</span></div>
-      <div class="footer__row mono">
-        <span>© <span class="year">2025</span> GO FRESH · KANZA &amp; MIYA</span>
-        <nav aria-label="Footer"><a href="#telemetry">SYSTEM</a><a href="#network">NETWORK</a><a href="#inventory">INVENTORY</a><a href="#contact">CONTACT</a></nav>
-        <a href="#top" data-cursor="UP">BACK TO TOP ↑</a>
-      </div>
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p class="footer__word" aria-hidden="true">Go Fresh</p>
+    <p class="footer__script script" aria-hidden="true">fresh, every day</p>
+    <div class="footer__row">
+      <p>© <span class="year">2025</span> Go Fresh · Kanza &amp; Miya</p>
+      <nav aria-label="Footer">
+        <a href="#story">Story</a><a href="#brands">Brands</a><a href="#eggs">Eggs</a><a href="#contact">Contact</a>
+        <a href="https://www.instagram.com/gofresh_foodstuff" target="_blank" rel="noopener">Instagram</a>
+      </nav>
     </div>
   </footer>
 
-  <a class="wa-float" href="https://wa.me/971506261523?text=Hi%20GO%20FRESH%21" target="_blank" rel="noopener" aria-label="Chat with GO FRESH on WhatsApp">
+  <a class="wa-float" href="https://wa.me/971506261523?text=Hi%20Go%20Fresh%21" target="_blank" rel="noopener" aria-label="Chat with Go Fresh on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.2 1.1Z" fill="currentColor"/></svg>
   </a>
 
@@ -314,6 +241,5 @@
   <script src="/js/vendor/ScrollTrigger.min.js"></script>
   <script src="/js/vendor/lenis.min.js"></script>
   <script src="/js/main.js"></script>
-  <script type="module" src="/js/scene.js"></script>
 </body>
 </html>

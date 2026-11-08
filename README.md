@@ -1,15 +1,18 @@
-# GO FRESH website
+# Go Fresh website
 
-Futuristic one-page experience for GO FRESH (Kanza & Miya eggs, Dubai): real-time 3D egg (Three.js), HUD interface, scroll-driven supply-network visualisation.
+Editorial one-page site for Go Fresh (Kanza & Miya eggs, Dubai).
 
 Plain HTML/CSS/JS — no build step. Deploy the repo root to Netlify as-is.
 
-- `index.html` — page markup
-- `css/style.css` — styles and design tokens
-- `js/main.js` — UI, scroll choreography (GSAP + ScrollTrigger + Lenis), product data, filters, form, Dubai open/closed status
-- `js/scene.js` — WebGL egg scene (Three.js); follows section targets set in `STAGES` in main.js
-- `js/vendor/` — GSAP 3.12.5, ScrollTrigger, Lenis 1.1.13, Three.js 0.160 (bundled locally)
+**Design system**
+- Palette: paper `#F5EDE0`, ink `#2A1A12`, yolk `#F0912A` / `#D2611B`; accents tile `#3A9BA6`, cherry `#A3191B`, apricot `#F4D6AE`, mint `#CFE4D8`
+- Type: Gloock (display serif), Mr Dafoe (script accents), DM Sans (text)
+
+**Files**
+- `index.html` — markup
+- `css/style.css` — tokens and styles
+- `js/main.js` — product data (`PRODUCTS`), filters, form, scroll animations (GSAP + ScrollTrigger + Lenis)
+- `js/vendor/` — GSAP 3.12.5, ScrollTrigger, Lenis 1.1.13
 - `_redirects` — old `/about`, `/product`, `/contact` URLs point to the matching sections
 
-To edit products, change the `PRODUCTS` array at the top of `js/main.js`.
 The contact form uses Netlify Forms (enable form detection in the Netlify dashboard).
